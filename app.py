@@ -12,11 +12,11 @@ from sklearn.dummy import DummyRegressor
 
 # --- Función para cargar datos ---
 #@st.cache(allow_output_mutation=True)
-#def load_data(path: str = 'gastos_domingo_porcentaje.xlsx'):
-    #return pd.read_excel(path)
+def load_data(path: str = 'gastos_domingo_porcentaje.xlsx'):
+    return pd.read_excel(path)
 
 # --- Función para entrenar el modelo ---
-#@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def train_model(df: pd.DataFrame):
     features = ['ubicacion_desayuno', 'almuerza', 'costo_gasolina', 'costo_pasaje', 'gastos_otros']
     X = df[features]
